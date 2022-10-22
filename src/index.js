@@ -17,6 +17,8 @@ import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./themes/theme";
+import { Provider } from "react-redux";
+import store from "./app/store";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -34,10 +36,12 @@ const router = createBrowserRouter(
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </Provider>
   </React.StrictMode>
 );
 
