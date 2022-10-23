@@ -7,11 +7,23 @@ export const tmdbApi = createApi({
   reducerPath: "tmdbApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://api.themoviedb.org/3" }),
   endpoints: (builder) => ({
-    //* Get Movies
-    getMovies: builder.query({
+    //* Get Now Playing Movies
+    getNowPlayingMovies: builder.query({
       query: () => `movie/now_playing?page=${page}&api_key=${tmdbApiKey}`,
+    }),
+    //* Get Popular Movies
+    getPopularMovies: builder.query({
+      query: () => `movie/popular?page=${page}&api_key=${tmdbApiKey}`,
+    }),
+    //* Get Top Rated Movies
+    getTopRatedMovies: builder.query({
+      query: () => `movie/top_rated?page=${page}&api_key=${tmdbApiKey}`,
     }),
   }),
 });
 
-export const { useGetMoviesQuery } = tmdbApi;
+export const {
+  useGetNowPlayingMoviesQuery,
+  useGetPopularMoviesQuery,
+  useGetTopRatedMoviesQuery,
+} = tmdbApi;
