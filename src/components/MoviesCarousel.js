@@ -1,124 +1,69 @@
 import React from "react";
 import Flicking from "@egjs/react-flicking";
-import { AutoPlay } from "@egjs/flicking-plugins";
 import "@egjs/react-flicking/dist/flicking.css";
 import "@egjs/react-flicking/dist/flicking-inline.css";
+import {
+  Box,
+  Card,
+  CardActionArea,
+  CardMedia,
+  Typography,
+} from "@mui/material";
 
-const MoviesCarousel = () => {
-  const plugins = [
-    new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false }),
-  ];
-  return (
-    <>
-      <Flicking
-        circular={true}
-        plugins={plugins}
-        defaultIndex={1}
-        panelsPerView={1.1}
-      >
-        <div
-          className="card-panel "
-          style={{
-            width: "100%",
-            height: "550px",
-            background: "pink",
-          }}
-        >
-          1
-        </div>
+const MoviesCarousel = ({ listName, imageHeight, query }) => {
+  const { data: movies, isLoading, isSuccess, isError, error } = query;
 
-        <div
-          className="card-panel "
-          style={{
-            width: "100%",
-            height: "550px",
-            background: "yellow",
-          }}
+  let content;
+
+  if (isLoading) content = <p>Loading...</p>;
+
+  if (isError) content = <p>Error {error} :(</p>;
+
+  if (isSuccess) {
+    const { results } = movies;
+    const popularMovies = results.slice(0, 9);
+
+    let displayedMovies;
+    if (listName === "Popular Movies") {
+      displayedMovies = popularMovies;
+    } else {
+      displayedMovies = results;
+    }
+
+    content = (
+      <Box>
+        <Typography variant="h5" sx={{ padding: "5px 25px" }}>
+          {listName}
+        </Typography>
+        <Flicking
+          moveType="freeScroll"
+          bound={true}
+          style={{ padding: "0 25px" }}
         >
-          2
-        </div>
-        <div
-          className="card-panel "
-          style={{
-            width: "100%",
-            height: "550px",
-            background: "magenta",
-          }}
-        >
-          3
-        </div>
-      </Flicking>
-      <Flicking moveType="freeScroll" bound={true} style={{ padding: "10px" }}>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍎 Apple
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍉 Watermelon
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🥝 Kiwi
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍎 Apple
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍉 Watermelon
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🥝 Kiwi
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍎 Apple
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍉 Watermelon
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🥝 Kiwi
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍎 Apple
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍉 Watermelon
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🥝 Kiwi
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍎 Apple
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍉 Watermelon
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🥝 Kiwi
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍎 Apple
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍉 Watermelon
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🥝 Kiwi
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍎 Apple
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍉 Watermelon
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🥝 Kiwi
-        </span>
-        <span className="button mr-2 is-white" style={{ padding: "10px" }}>
-          🍎 Apple
-        </span>
-      </Flicking>
-      ;
-    </>
-  );
+          {displayedMovies.map((movie) => (
+            <Card
+              key={movie.id}
+              sx={{ maxWidth: 200, marginRight: "3px", borderRadius: 0 }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  height={imageHeight}
+                  image={`https://image.tmdb.org/t/p/original/${
+                    listName === "Popular Movies"
+                      ? movie.poster_path
+                      : movie.backdrop_path
+                  }`}
+                  alt={movie.title}
+                />
+              </CardActionArea>
+            </Card>
+          ))}
+        </Flicking>
+      </Box>
+    );
+  }
+  return content;
 };
 
 export default MoviesCarousel;
