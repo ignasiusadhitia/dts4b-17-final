@@ -1,5 +1,5 @@
 import { Box, Button, CircularProgress, Grid, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useParams } from "react-router-dom";
 import { useGetMovieQuery, useGetRecommendationsQuery } from "../apis/tmdbApi";
@@ -19,6 +19,9 @@ const MoviePage = () => {
   const { data: recommendations, isFetching: isRecommendationsFetching } =
     useGetRecommendationsQuery({ list: "/recommendations", movie_id: movieId });
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   let content;
   if (isLoading)
     content = (
@@ -158,7 +161,7 @@ const MoviePage = () => {
             <Typography variant="h5" sx={{ fontWeight: "bold" }}>
               You might also like
             </Typography>
-            {recommendations ? (
+            {recommendations?.results?.length ? (
               <Grid
                 container
                 spacing={{ xs: 1, md: 2 }}
