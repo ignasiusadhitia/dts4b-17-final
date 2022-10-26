@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Box } from "@mui/material";
 import {
   useGetNowPlayingMoviesQuery,
@@ -11,6 +11,9 @@ import Footer from "../components/Footer";
 import MoviesList from "../components/MoviesList";
 
 const MainPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Box>
       <Navbar />

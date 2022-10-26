@@ -29,7 +29,7 @@ const Register = () => {
         email,
         password
       );
-      navigate("/");
+      navigate("/movies");
     } catch (error) {
       setErrorMessage(error.message);
     }
