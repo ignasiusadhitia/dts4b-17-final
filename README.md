@@ -1,12 +1,6 @@
 <!-- PROJECT LOGO -->
 <br />
-<div align="center"> 
-  <div>
-    <a href="https://github.com/ignasiusadhitia/dts4b-17-final">    
-      <img src="media/logo.png" alt="logo">
-    </a>
-  </div>
-  
+<div align="center">  
   <div>
     <a href="https://github.com/ignasiusadhitia/dts4b-17-final">    
       <img src="media/movie_trailer.png" alt="movie_trailer_image">
@@ -21,7 +15,7 @@
     <a href="https://github.com/ignasiusadhitia/dts4b-17-final"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://jolly-pithivier-6ddf90.netlify.app/">View Live Demo</a>
+    <a href="https://jolly-pithivier-6ddf90.netlify.app">View Live Demo</a>
     ·
     <a href="https://github.com/ignasiusadhitia/dts4b-17-final/issues">Report Bug</a>
     ·
@@ -63,9 +57,9 @@
 
 [![Monsters Rolodex ][product-screenshot]](https://example.com)
 
-The project is from <a href="https://www.udemy.com/course/complete-react-developer-zero-to-mastery">Complete React Developer in 2022 (w/ Redux, Hooks, GraphQL)</a>, Section 3: React Basics.
+The project is a final project of DTS REA4 <a href="https://reactjs.org/">React.js</a> Developer Course.
 
-Monsters Rolodex is a monsters cards website with search functionality. There are 10 monsters with their name, image, and email address. It consummes users API from [JSONPlaceholder - Free Fake Rest API](https://jsonplaceholder.typicode.com/) and monsters image from [RoboHash](https://robohash.org/).
+Movie Trailer is a movie website with search functionality. There are 10 monsters with their name, image, and email address. It consummes users API from [JSONPlaceholder - Free Fake Rest API](https://jsonplaceholder.typicode.com/) and monsters image from [RoboHash](https://robohash.org/).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -100,7 +94,7 @@ _This is how to run the project on your local environment._
    ```
 2. Open the repo directory
    ```sh
-   cd monsters_rolodex
+   cd dts4b-17-final
    ```
 3. Install NPM packages
    ```sh
@@ -177,7 +171,7 @@ src/
 
 Project Link: [https://github.com/ignasiusadhitia/dts4b-17-final](https://github.com/ignasiusadhitia/dts4b-17-final)
 
-Project Live Demo: [https://ignasiusadhitia.github.io/monsters_rolodex](https://ignasiusadhitia.github.io/monsters_rolodex)
+Project Live Demo: [https://jolly-pithivier-6ddf90.netlify.app](https://jolly-pithivier-6ddf90.netlify.app)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
