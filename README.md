@@ -10,7 +10,7 @@
   <h3 align="center">Movie Trailer App</h3>
 
   <p align="center">
-    DTS REA4 <a href="https://reactjs.org/">React.js</a> Developer Course Final Project.
+    DTS REA4 Course Final Project.
     <br />
     <a href="https://github.com/ignasiusadhitia/dts4b-17-final"><strong>Explore the docs »</strong></a>
     <br />
@@ -57,7 +57,7 @@
 
 [![Monsters Rolodex ][product-screenshot]](https://example.com)
 
-The project is a final project of DTS REA4 <a href="https://reactjs.org/">React.js</a> Developer Course.
+The project is a final project of DTS REA4 Course.
 
 Movie Trailer is a movie website with search functionality. There are 10 monsters with their name, image, and email address. It consummes users API from [JSONPlaceholder - Free Fake Rest API](https://jsonplaceholder.typicode.com/) and monsters image from [RoboHash](https://robohash.org/).
 
