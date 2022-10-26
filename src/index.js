@@ -7,11 +7,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import App from "./App";
-import HomePage from "./containers/HomePage";
+
 import Login from "./containers/Login";
 import MoviePage from "./containers/MoviePage";
 import NotFound from "./containers/NotFound";
-import ProfilesPage from "./containers/ProfilesPage";
 import Register from "./containers/Register";
 import reportWebVitals from "./reportWebVitals";
 import { ThemeProvider } from "@mui/material/styles";
@@ -19,16 +18,24 @@ import CssBaseline from "@mui/material/CssBaseline";
 import theme from "./themes/theme";
 import { Provider } from "react-redux";
 import store from "./app/store";
+import RequireAuth from "./components/RequireAuth";
+
+import MainPage from "./containers/MainPage";
+import MoviesPage from "./containers/MoviesPage";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />} errorElement={<NotFound />}>
-      <Route errorElement={<NotFound />} />
-      <Route index element={<HomePage />} />
+      <Route index element={<MainPage />} />
+      <Route element={<RequireAuth />}>
+        <Route path="movies">
+          <Route index element={<MoviesPage />} />
+          <Route path=":movieId" element={<MoviePage />} />
+        </Route>
+      </Route>
       <Route path="login" element={<Login />} />
       <Route path="register" element={<Register />} />
-      <Route path="movies/:movieId" element={<MoviePage />} />
-      <Route path="profiles/:profileId" element={<ProfilesPage />} />
+      <Route errorElement={<NotFound />} />
     </Route>
   )
 );

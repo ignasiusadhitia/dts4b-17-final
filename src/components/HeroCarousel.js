@@ -5,6 +5,7 @@ import "@egjs/react-flicking/dist/flicking.css";
 import "@egjs/react-flicking/dist/flicking-inline.css";
 import { useGetNowPlayingMoviesQuery } from "../apis/tmdbApi";
 import { Card, CardActionArea, CardMedia } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const HeroCarousel = () => {
   const {
@@ -36,17 +37,27 @@ const HeroCarousel = () => {
         defaultIndex={1}
         panelsPerView={1.1}
       >
-        {carouselImagesData.map((movie) => (
-          <Card key={movie.id} sx={{ margin: "0 10px", maxWidth: "100%" }}>
-            <CardActionArea>
-              <CardMedia
-                component="img"
-                height="500px"
-                image={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
-                alt={movie.title}
-              />
-            </CardActionArea>
-          </Card>
+        {carouselImagesData?.map((movie) => (
+          <Link to={`movies/${movie.id}`} key={movie.id}>
+            <Card
+              sx={{
+                margin: "0 10px",
+                maxWidth: "100%",
+                height: "500px",
+                position: "relative",
+                zIndex: 0,
+              }}
+            >
+              <CardActionArea>
+                <CardMedia
+                  component="img"
+                  width="100%"
+                  image={`https://image.tmdb.org/t/p/original/${movie.backdrop_path}`}
+                  alt={movie.title}
+                />
+              </CardActionArea>
+            </Card>
+          </Link>
         ))}
       </Flicking>
     );

@@ -9,6 +9,7 @@ import {
   CardMedia,
   Typography,
 } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const MoviesCarousel = ({ listName, imageHeight, query }) => {
   const { data: movies, isLoading, isSuccess, isError, error } = query;
@@ -21,7 +22,7 @@ const MoviesCarousel = ({ listName, imageHeight, query }) => {
 
   if (isSuccess) {
     const { results } = movies;
-    const popularMovies = results.slice(0, 9);
+    const popularMovies = results?.slice(0, 9);
 
     let displayedMovies;
     if (listName === "Popular Movies") {
@@ -40,24 +41,22 @@ const MoviesCarousel = ({ listName, imageHeight, query }) => {
           bound={true}
           style={{ padding: "0 25px" }}
         >
-          {displayedMovies.map((movie) => (
-            <Card
-              key={movie.id}
-              sx={{ maxWidth: 200, marginRight: "3px", borderRadius: 0 }}
-            >
-              <CardActionArea>
-                <CardMedia
-                  component="img"
-                  height={imageHeight}
-                  image={`https://image.tmdb.org/t/p/original/${
-                    listName === "Popular Movies"
-                      ? movie.poster_path
-                      : movie.backdrop_path
-                  }`}
-                  alt={movie.title}
-                />
-              </CardActionArea>
-            </Card>
+          {displayedMovies?.map((movie) => (
+            <Link to={`movies/${movie.id}`} key={movie.id}>
+              <Card
+                key={movie.id}
+                sx={{ maxWidth: 200, marginRight: "3px", borderRadius: 0 }}
+              >
+                <CardActionArea>
+                  <CardMedia
+                    component="img"
+                    height={imageHeight}
+                    image={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
+                    alt={movie.title}
+                  />
+                </CardActionArea>
+              </Card>
+            </Link>
           ))}
         </Flicking>
       </Box>
