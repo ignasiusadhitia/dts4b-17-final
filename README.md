@@ -143,9 +143,9 @@ _This is how to run the project on your local environment._
 <!-- DEMO VIDEO -->
 ## Demo Video
 
-
-https://user-images.githubusercontent.com/81973176/198189978-10dbfed5-b740-4709-9bad-7959f715f111.mp4
-
+<div align="center">
+  https://user-images.githubusercontent.com/81973176/198189978-10dbfed5-b740-4709-9bad-7959f715f111.mp4
+</div>
 
 
 <p align="right">(<a href="#top">back to top</a>)</p>
