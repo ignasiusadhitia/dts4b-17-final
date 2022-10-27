@@ -143,7 +143,7 @@ _This is how to run the project on your local environment._
 <!-- DEMO VIDEO -->
 ## Video Demo
 
-<video src="media/movie_traile_demo.mp4" controls="controls" muted="muted" width="100%" autoplay>
+<video src="media/movie-trailer-demo_ZiaD9CCu.mp4" controls="controls" muted="muted" width="100%" autoplay>
 </video>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
