@@ -224,5 +224,6 @@ Ignasius Yuda Adhitia - [Github](https://github.com/ignasiusadhitia/) - [Gitlab]
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
-[product-screenshot]: media/screenshot.png
+[product-screenshot]:https://user-images.githubusercontent.com/81973176/198183052-a51a21ee-8e84-4bf1-afd4-77484b7dd289.png
+
 
