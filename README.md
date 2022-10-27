@@ -143,8 +143,10 @@ _This is how to run the project on your local environment._
 <!-- DEMO VIDEO -->
 ## Demo Video
 
-<video src="media/movie-trailer-demo_ZiaD9CCu.mp4" controls="controls" muted="muted" width="100%" autoplay>
-</video>
+
+https://user-images.githubusercontent.com/81973176/198188513-73af77f0-d09d-43b7-8718-43a44bf6e83e.mp4
+
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
