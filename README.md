@@ -55,19 +55,46 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Monsters Rolodex ][product-screenshot]](https://example.com)
+[![Movie Trailer][product-screenshot]](https://jolly-pithivier-6ddf90.netlify.app)
 
 The project is a final project of DTS REA4 Course.
 
-Movie Trailer is a movie website with search functionality. There are 10 monsters with their name, image, and email address. It consummes users API from [JSONPlaceholder - Free Fake Rest API](https://jsonplaceholder.typicode.com/) and monsters image from [RoboHash](https://robohash.org/).
+Movie Trailer is a movie trailer database website with search functionality. It consummes movies API from [The Movie Database (TMDB)](https://www.themoviedb.org/documentation/api) and using authentication service from [Firebase](https://firebase.google.com/).
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 
+### App Features
+
+* Login
+* Logout
+* Register
+* Landing page
+* Dashboard page
+* Movie trailer page
+* Search movie trailer
+* Switch between movie genres or categories
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 
 ### Built With
 
-This Monsters Rolodex project was built with [React.js](https://reactjs.org/).
+This Movie Trailer App project was built with:
+* [react 18.2.0](https://reactjs.org/)
+* [react-dom 18.2.0](https://reactjs.org/)
+* [react-redux 8.0.4](https://react-redux.js.org/)
+* [@reduxjs/toolkit 1.8.6 (RTK Query)](https://redux-toolkit.js.org/)
+* [react-router-dom 6.4.2](https://reactrouter.com/en/main)
+* [Firebase 9.12.1](https://firebase.google.com/)
+* [react-firebase-hooks 5.0.3](https://github.com/csfrequency/react-firebase-hooks)
+* [@mui/material 5.10.10](https://mui.com/)
+* [@mui/icons-material 5.10.9](https://mui.com/)
+* [@emotion/react 11.10.4](https://mui.com/)
+* [@emotion/styled 11.10.4](https://mui.com/)
+* [@egjs/react-flicking 4.10.1](https://naver.github.io/egjs-flicking/)
+* [@egjs/flicking-plugins 4.4.0](https://naver.github.io/egjs-flicking/)
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
@@ -114,12 +141,13 @@ _This is how to run the project on your local environment._
 
 
 <!-- DEMO VIDEO -->
-## Demo Video
+## Video Demo
 
-<video src="https://user-images.githubusercontent.com/81973176/149464395-15fee452-efd5-4482-929b-0ffe70080550.mp4" data-canonical-src="https://user-images.githubusercontent.com/81973176/149464395-15fee452-efd5-4482-929b-0ffe70080550.mp4" controls="controls" muted="muted">
+<video src="media/movie_trailer_demo.mp4" controls="controls" muted="muted" width="100%" autoplay>
 </video>
 
 <p align="right">(<a href="#top">back to top</a>)</p>
+
 
 
 
@@ -189,9 +217,7 @@ Ignasius Yuda Adhitia - [Github](https://github.com/ignasiusadhitia/) - [Gitlab]
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
 
-* [Complete React Developer in 2022 (w/ Redux, Hooks, GraphQL)](https://www.udemy.com/course/complete-react-developer-zero-to-mastery)
-* [JSONPlaceholder - Free Fake Rest API](https://jsonplaceholder.typicode.com/)
-* [RoboHash](https://robohash.org/)
+* [The Movie Database (TMDB)](https://www.themoviedb.org/documentation/api)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
